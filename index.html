@@ -31,142 +31,142 @@
   </ons-tabbar>
 
 
-    <ons-template id="actividades.html">
-      <ons-navigator >
-        <ons-page ng-controller="ActividadesController">
-          <ons-toolbar class="custom-nav">
-            <div class="left">
-              <a class="btn-floating waves-effect waves-light transparent custom-foat-left" ng-click="showSortMenu()" style="height: 30px; width: 30px"><i class="fa fa-sort"></i></a>
-            </div>
-            <div class="center color-blanco" ng-click="hideSortMenu()">
-              {{fecha}}
-            </div>
-            <div class="right" ng-click="hideSortMenu()">
-              <div class="fixed-action-btn">
-                <div class=" custom-foat">
-                  <a class="btn-floating transparent" ng-click="abrirOpcion()" style="height: 30px; width: 30px">
-                    <i class="fa fa-ellipsis-v"></i>
-                  </a>
-                  <ul class="custom-sub-item">
-                    <li><a class="btn-floating red" ng-click="llamar()"><i class="fa fa-refresh"></i></a></li>
-                    <li ng-click="lanzarCalendario()"><a class="btn-floating yellow darken-1"><i class="fa fa-calendar"></i></a></li>
-                    <!--<li ng-click="lanzarChat()"><a class="btn-floating green"><i class="fa fa-comments"></i></a></li>-->
-                    <li ng-click="cerrarOpcion()"><a class="btn-floating purple"><i class="fa fa-times"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </ons-toolbar>
-          <div id="sort-menu" class="pop-menu-left blue-grey lighten-2">
-            <a class="waves-effect waves-teal btn-flat white-text" ng-dblclick="setOrder(0)">Actividad</a>
-            <a class="waves-effect waves-teal btn-flat white-text" ng-dblclick="setOrder(4)">Categoria</a>
-            <a class="waves-effect waves-teal btn-flat white-text" ng-dblclick="setOrder(1)">Estatus</a>
-            <a class="waves-effect waves-teal btn-flat white-text" ng-dblclick="setOrder(5)">Prioridad</a>
+  <ons-template id="actividades.html">
+    <ons-navigator >
+      <ons-page ng-controller="ActividadesController">
+        <ons-toolbar class="custom-nav">
+          <div class="left">
+            <a class="btn-floating waves-effect waves-light transparent custom-foat-left" ng-click="showSortMenu()" style="height: 30px; width: 30px"><i class="fa fa-sort"></i></a>
           </div>
-          <a class="btn-floating btn-large waves-effect waves-light blue" style="position:fixed; bottom:65px; right:24px" ng-click="showModalAlta()"><i class="fa fa-plus"></i></a>
-          <div id="modal-alta" class="my-modal">
-            <div class="my-modal-box">
-              <div class="close-modal">
-                <i class="fa fa-times" ng-click="closeModalAlta()"></i>
-              </div>
-              <div class="container">
-                <form id="form-alta-actividad">
-                  <div id="loading" style="display:none; text-align:center;">
-                    <i class="fa fa-circle-o-notch fa-spin"></i>
-                    <br>subiendo...
-                  </div>
-
-
-
-                  <div class="row">
-                    <input type="text"  style="width:100%" class="" placeholder="Descripcion" name="descripcion">
-
-                    <select id="categoria" name="categoria" class="">
-                      <option style="color:#000;" value="Administrativa">Administrativa</option>
-                      <option style="color:#000;" value="Proyectos">Proyectos</option>
-                      <option style="color:#000;" value="Planeación">Planeacion</option>
-                      <option style="color:#000;" value="Cliente">Cliente</option>
-                      <option style="color:#000;" value="Investigación">Investigacion</option>
-                      <option style="color:#000;" value="Curso">Curso</option>
-                      <option style="color:#000;" value="Programación">Programacion</option>
-                      <option style="color:#000;" value="Junta">Junta</option>
-                      <option style="color:#000;" value="Personal">Personal</option>
-                    </select>
-                  </div>
-
-
-                  <div class="row">
-                    <select id="prioridad" name="prioridad" class="" style="width:50%">
-                      <option style="color:#000;" value="a">Prioridad</option>
-                      <option style="color:#000;" value="a">Urgente</option>
-                      <option style="color:#000;" value="b">Alta</option>
-                      <option style="color:#000;" value="c">Media</option>
-                      <option style="color:#000;" value="d">Baja</option>
-                    </select>
-                    <select id="time" name="time" class="" style="width:50%">
-                      <option style="color:#000;" value="0">Duracion</option>
-                      <option style="color:#000;" value="5">5 min</option>
-                      <option style="color:#000;" value="15">15 min</option>
-                      <option style="color:#000;" value="30">30 min</option>
-                      <option style="color:#000;" value="45">45 min</option>
-                      <option style="color:#000;" value="60">60 min</option>
-                      <option style="color:#f000;" value="120">120 min</option>
-                      <option style="color:#000;" value="150">150 min</option>
-                      <option style="color:#000;" value="180">180 min</option>
-                    </select>
-                  </div>
-                  <div class="vspc form-row">
-                    <ons-button modifier="large--cta" ng-click="enviarForm()">Agregar</ons-button>
-                    <ons-button modifier="large--cta" ng-click="closeModalAlta()">Cancelar</ons-button>
-
-                  </div>
-                </form>
+          <div class="center color-blanco" ng-click="hideSortMenu()">
+            {{fecha}}
+          </div>
+          <div class="right" ng-click="hideSortMenu()">
+            <div class="fixed-action-btn">
+              <div class=" custom-foat">
+                <a class="btn-floating transparent" ng-click="abrirOpcion()" style="height: 30px; width: 30px">
+                  <i class="fa fa-ellipsis-v"></i>
+                </a>
+                <ul class="custom-sub-item">
+                  <li><a class="btn-floating red" ng-click="llamar()"><i class="fa fa-refresh"></i></a></li>
+                  <li ng-click="lanzarCalendario()"><a class="btn-floating yellow darken-1"><i class="fa fa-calendar"></i></a></li>
+                  <!--<li ng-click="lanzarChat()"><a class="btn-floating green"><i class="fa fa-comments"></i></a></li>-->
+                  <li ng-click="cerrarOpcion()"><a class="btn-floating purple"><i class="fa fa-times"></i></a></li>
+                </ul>
               </div>
             </div>
           </div>
-          <div class="row" style="height: 25px;  background-color: #90a4ae;">
-            <div class="col s8" style="background-color: #90a4ae;">
-              <input type="search" style="text-align:center; vertical-align: bottom;  background-color: #90a4ae; color: white" ng-model="entradaActivity" placeholder="Buscar">
+        </ons-toolbar>
+        <div id="sort-menu" class="pop-menu-left blue-grey lighten-2">
+          <a class="waves-effect waves-teal btn-flat white-text" ng-dblclick="setOrder(0)">Actividad</a>
+          <a class="waves-effect waves-teal btn-flat white-text" ng-dblclick="setOrder(4)">Categoria</a>
+          <a class="waves-effect waves-teal btn-flat white-text" ng-dblclick="setOrder(1)">Estatus</a>
+          <a class="waves-effect waves-teal btn-flat white-text" ng-dblclick="setOrder(5)">Prioridad</a>
+        </div>
+        <a class="btn-floating btn-large waves-effect waves-light blue" style="position:fixed; bottom:65px; right:24px" ng-click="showModalAlta()"><i class="fa fa-plus"></i></a>
+        <div id="modal-alta" class="my-modal">
+          <div class="my-modal-box">
+            <div class="close-modal">
+              <i class="fa fa-times" ng-click="closeModalAlta()"></i>
             </div>
-            <div class="col s4" style="background-color: #90a4ae;">
-                <input type="date" ng-model='dateTop.value' id="datePicker" style="text-align:center; vertical-align: bottom;  background-color: #90a4ae; float:right" ng-change="changeDate()" />
+            <div class="container">
+              <form id="form-alta-actividad">
+                <div id="loading" style="display:none; text-align:center;">
+                  <i class="fa fa-circle-o-notch fa-spin"></i>
+                  <br>subiendo...
+                </div>
+
+                <div class="row">
+                    <input placeholder="Descripcion" id="descripcion" type="text" class="validate" name="descripcion">
+                </div>
+
+                <div class="row">
+                  <select id="categoria" name="categoria" class="" style=" height:30px;">
+                    <option style="color:#000;" value="Administrativa">Administrativa</option>
+                    <option style="color:#000;" value="Proyectos">Proyectos</option>
+                    <option style="color:#000;" value="Planeación">Planeacion</option>
+                    <option style="color:#000;" value="Cliente">Cliente</option>
+                    <option style="color:#000;" value="Investigación">Investigacion</option>
+                    <option style="color:#000;" value="Curso">Curso</option>
+                    <option style="color:#000;" value="Programación">Programacion</option>
+                    <option style="color:#000;" value="Junta">Junta</option>
+                    <option style="color:#000;" value="Personal">Personal</option>
+                  </select>
+                </div>
+
+
+                <div class="row">
+                  <select id="prioridad" name="prioridad" class="" style="width:50%; height:30px;">
+                    <option style="color:#000;" value="a">Prioridad</option>
+                    <option style="color:#000;" value="a">Urgente</option>
+                    <option style="color:#000;" value="b">Alta</option>
+                    <option style="color:#000;" value="c">Media</option>
+                    <option style="color:#000;" value="d">Baja</option>
+                  </select>
+                  <select id="time" name="time" class="" style="width:50%;  height:30px;">
+                    <option style="color:#000;" value="0">Duracion</option>
+                    <option style="color:#000;" value="5">5 min</option>
+                    <option style="color:#000;" value="15">15 min</option>
+                    <option style="color:#000;" value="30">30 min</option>
+                    <option style="color:#000;" value="45">45 min</option>
+                    <option style="color:#000;" value="60">60 min</option>
+                    <option style="color:#f000;" value="120">120 min</option>
+                    <option style="color:#000;" value="150">150 min</option>
+                    <option style="color:#000;" value="180">180 min</option>
+                  </select>
+                </div>
+                <div class="vspc form-row">
+                  <ons-button modifier="large--cta" ng-click="enviarForm()">Agregar</ons-button>
+                  <ons-button modifier="large--cta" ng-click="closeModalAlta()">Cancelar</ons-button>
+
+                </div>
+              </form>
             </div>
           </div>
-          <ul class="timeline" ng-click="hideSortMenu()">
-            <li class="timeline-li" modifier="chevron" ng-repeat="actividad in actividades.detail | filter:dateTop.strVal | filter:entradaActivity | orderBy: order">
-              <div class="row">
+        </div>
+        <div class="row" style="height: 25px;  background-color: #90a4ae;">
+          <div class="col s8" style="background-color: #90a4ae;">
+            <input type="search" style="text-align:center; vertical-align: bottom;  background-color: #90a4ae; color: white" ng-model="entradaActivity" placeholder="Buscar">
+          </div>
+          <div class="col s4" style="background-color: #90a4ae;">
+            <input type="date" ng-model='dateTop.value' id="datePicker" style="text-align:center; vertical-align: bottom;  background-color: #90a4ae; float:right" ng-change="changeDate()" />
+          </div>
+        </div>
+        <ul class="timeline" ng-click="hideSortMenu()">
+          <li class="timeline-li" modifier="chevron" ng-repeat="actividad in actividades.detail | filter:dateTop.strVal | filter:entradaActivity | orderBy: order">
+            <div class="row">
 
-                <div width="50px">
-                  <i class="fa fa-circle {{actividad.color}} fa-f3"></i>
-                  <br>
-                  <i class="fa fa-flag prioridad-{{actividad.prioridad}} fa-f3"></i>
-                  <br>
-                  <img src="{{findUsuarioURLimage(actividad.para)}}" style="height: 20px; width: 20px" />
+              <div width="50px">
+                <i class="fa fa-circle {{actividad.color}} fa-f3"></i>
+                <br>
+                <i class="fa fa-flag prioridad-{{actividad.prioridad}} fa-f3"></i>
+                <br>
+                <img src="{{findUsuarioURLimage(actividad.para)}}" style="height: 20px; width: 20px" />
+              </div>
+
+              <div width="100%">
+                <div class="timeline-date"></div>
+                <div class="timline-from">
+                  <span class="timeline-name">{{actividad.categoria}}</span>
+                  <span class="timeline-id">{{actividad.tiempo}} min</span>
                 </div>
 
-                <div width="100%">
-                  <div class="timeline-date"></div>
-                  <div class="timline-from">
-                    <span class="timeline-name">{{actividad.categoria}}</span>
-                    <span class="timeline-id">{{actividad.tiempo}} min</span>
-                  </div>
-
-                  <div class="timeline-message">
-                    {{actividad.descripcion}}
-                  </div>
+                <div class="timeline-message">
+                  {{actividad.descripcion}}
                 </div>
-
-
               </div>
 
 
-            </li>
-          </ul>
+            </div>
 
 
-        </ons-page>
-      </ons-navigator>
-    </ons-template>
+          </li>
+        </ul>
+
+
+      </ons-page>
+    </ons-navigator>
+  </ons-template>
 
 
   <ons-template id="popover.html">
@@ -215,100 +215,100 @@
           <ons-tab page="favoritos.html" label="Favoritos"></ons-tab>
           <ons-tab page="contactos.html" label="Contactos"></ons-tab>
         </ons-tabbar>
-        </ons-tabbar>
-      </ons-page>
-    </ons-navigator>
-  </ons-template>
-  <ons-template id="chat.html">
-    <ons-page ng-controller="ChatController">
-      <ul class="collection">
-        <li class="collection-item avatar" ng-repeat="conversacion in conversaciones.detail" ng-click="lanzarConversacion(conversacion)">
-          <img src="{{findUsuarioURLimage(conversacion.nombre)}}" alt="" class="circle">
-          <span class="title">{{conversacion.nombre}}</span>
-          <p class="timeline-id">
-            <br> {{conversacion.last_mensaje}}
-          </p>
-          <div class="timeline-date" style="position: absolute; float: right; top: 5px; right: 15px">{{conversacion.date}}</div>
-        </li>
-      </ul>
+      </ons-tabbar>
     </ons-page>
-  </ons-template>
-  <ons-template id="conversacion.html">
-    <ons-page ng-controller="ConversacionController">
-      <ons-toolbar class="custom-nav">
-        <div class="left">
-          <ons-toolbar-button ng-click="regresar()">
-            <ons-icon icon="fa fa-arrow-left color-blanco"></ons-icon>
-          </ons-toolbar-button>
-        </div>
-        <div class="center color-blanco">
-          <span style="font-size:bolder; text-height: 12px"> {{selectedTarget}} </span>
-        </div>
-        <div class="right">
-        </div>
-      </ons-toolbar>
-      <ul class="chat">
+  </ons-navigator>
+</ons-template>
+<ons-template id="chat.html">
+  <ons-page ng-controller="ChatController">
+    <ul class="collection">
+      <li class="collection-item avatar" ng-repeat="conversacion in conversaciones.detail" ng-click="lanzarConversacion(conversacion)">
+        <img src="{{findUsuarioURLimage(conversacion.nombre)}}" alt="" class="circle">
+        <span class="title">{{conversacion.nombre}}</span>
+        <p class="timeline-id">
+          <br> {{conversacion.last_mensaje}}
+        </p>
+        <div class="timeline-date" style="position: absolute; float: right; top: 5px; right: 15px">{{conversacion.date}}</div>
+      </li>
+    </ul>
+  </ons-page>
+</ons-template>
+<ons-template id="conversacion.html">
+  <ons-page ng-controller="ConversacionController">
+    <ons-toolbar class="custom-nav">
+      <div class="left">
+        <ons-toolbar-button ng-click="regresar()">
+          <ons-icon icon="fa fa-arrow-left color-blanco"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center color-blanco">
+        <span style="font-size:bolder; text-height: 12px"> {{selectedTarget}} </span>
+      </div>
+      <div class="right">
+      </div>
+    </ons-toolbar>
+    <ul class="chat">
 
-        <li ng-repeat="chat in selectedChat">
-          <div class="bubble you" ng-if="user2==chat.from">
-            {{chat.message}}
-            <img src="{{findUsuarioURLimage(chat.from)}}" alt="" class="circle" style="width:20px; height:20px; position: absolute; bottom:-10px; right: -5px">
-            <div class="timeline-date">{{chat.time}}</div>
-          </div>
-          <div class="bubble me" ng-if="user2!=chat.from">
-            {{chat.message}}
-            <img src="{{findUsuarioURLimage(chat.from)}}" alt="" class="circle" style="width:20px; height:20px; position: absolute; top:-10px; left: -5px">
-            <div class="timeline-date">{{chat.time}}</div>
-          </div>
-        </li>
-      </ul>
-      <ons-bottom-toolbar>
-        <div class="center" style="width: 100%;">
-          <ons-toolbar-button style="width: 15%; text-align:center;">
-            <a class="btn-floating waves-effect waves-light blue" style="bottom:10px">
-              <i class="fa fa-paperclip"></i>
-            </a>
-          </ons-toolbar-button>
-          <input type="text" id="textNuevo" placeholder="Type your message here !!" style="width: 60%; bottom:10px">
-          <ons-toolbar-button style="width: 15%; text-align:right" ng-click="sendMessage()">
-            <a class="btn-floating waves-effect waves-light green" style="text-align:center; bottom: 10px">
-              <i class="fa fa-send"></i>
-            </a>
-          </ons-toolbar-button>
+      <li ng-repeat="chat in selectedChat">
+        <div class="bubble you" ng-if="user2==chat.from">
+          {{chat.message}}
+          <img src="{{findUsuarioURLimage(chat.from)}}" alt="" class="circle" style="width:20px; height:20px; position: absolute; bottom:-10px; right: -5px">
+          <div class="timeline-date">{{chat.time}}</div>
         </div>
-      </ons-bottom-toolbar>
-    </ons-page>
-  </ons-template>
-  <ons-template id="favoritos.html">
-    <ons-page ng-controller="FavoritosController">
-      <div class="row" ng-repeat="favorito in favoritos.detail" ng-click="lanzarConversacionFavoritos(favorito.nombre)">
-        <div class="col s12">
-          <img style="height: 40px; width: 40px;" src="{{findUsuarioURLimage(favorito.nombre)}}" class="circle" />
-          <span>{{favorito.nombre}}</span>
+        <div class="bubble me" ng-if="user2!=chat.from">
+          {{chat.message}}
+          <img src="{{findUsuarioURLimage(chat.from)}}" alt="" class="circle" style="width:20px; height:20px; position: absolute; top:-10px; left: -5px">
+          <div class="timeline-date">{{chat.time}}</div>
         </div>
+      </li>
+    </ul>
+    <ons-bottom-toolbar>
+      <div class="center" style="width: 100%;">
+        <ons-toolbar-button style="width: 15%; text-align:center;">
+          <a class="btn-floating waves-effect waves-light blue" style="bottom:10px">
+            <i class="fa fa-paperclip"></i>
+          </a>
+        </ons-toolbar-button>
+        <input type="text" id="textNuevo" placeholder="Type your message here !!" style="width: 60%; bottom:10px">
+        <ons-toolbar-button style="width: 15%; text-align:right" ng-click="sendMessage()">
+          <a class="btn-floating waves-effect waves-light green" style="text-align:center; bottom: 10px">
+            <i class="fa fa-send"></i>
+          </a>
+        </ons-toolbar-button>
       </div>
-    </ons-page>
-  </ons-template>
-  <ons-template id="contactos.html">
-    <ons-page ng-controller="ContactosController">
-      <input id="enter" type="search" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Buscar" ng-model="entradaName">
-      <div class="row" data-badge="1" ng-repeat="item in usuarios | filter: user | filter: entradaName" id="side{{item.nombre}}">
-        <!-- Pass username and display name to register popup -->
-        <div class="col s3" ng-click="lanzarConversacionContactos(item.nombre)">
-          <img src="{{item.image}}" style="height:40px; width:40px" class="circle" />
-          <span>{{item.nombre}}</span>
-        </div>
+    </ons-bottom-toolbar>
+  </ons-page>
+</ons-template>
+<ons-template id="favoritos.html">
+  <ons-page ng-controller="FavoritosController">
+    <div class="row" ng-repeat="favorito in favoritos.detail" ng-click="lanzarConversacionFavoritos(favorito.nombre)">
+      <div class="col s12">
+        <img style="height: 40px; width: 40px;" src="{{findUsuarioURLimage(favorito.nombre)}}" class="circle" />
+        <span>{{favorito.nombre}}</span>
       </div>
+    </div>
+  </ons-page>
+</ons-template>
+<ons-template id="contactos.html">
+  <ons-page ng-controller="ContactosController">
+    <input id="enter" type="search" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Buscar" ng-model="entradaName">
+    <div class="row" data-badge="1" ng-repeat="item in usuarios | filter: user | filter: entradaName" id="side{{item.nombre}}">
+      <!-- Pass username and display name to register popup -->
+      <div class="col s3" ng-click="lanzarConversacionContactos(item.nombre)">
+        <img src="{{item.image}}" style="height:40px; width:40px" class="circle" />
+        <span>{{item.nombre}}</span>
       </div>
-    </ons-page>
-  </ons-template>
-  <ons-template id="notification.html">
-    <ons-page>
-      <ons-toolbar class="custom-nav">
-        <div class="center color-blanco">Notificaciones</div>
-      </ons-toolbar>
-    </ons-page>
-  </ons-template>
+    </div>
+  </div>
+</ons-page>
+</ons-template>
+<ons-template id="notification.html">
+  <ons-page>
+    <ons-toolbar class="custom-nav">
+      <div class="center color-blanco">Notificaciones</div>
+    </ons-toolbar>
+  </ons-page>
+</ons-template>
 </body>
 
 </html>
