@@ -1,4 +1,4 @@
-var user2 = "JoseRojas";
+var user2 = "CarlosVazquez";
 var conn = "";
 var conexiones = 0;
 var selectedTarget = "";
@@ -62,7 +62,7 @@ app.controller("body-controller", function($scope, $http) {
     }
   };
   $scope.llamar = function() {
-    $http.get('http://alexrojas.cloudapp.net/web/api/bitacora/getActivities.php?user=JoseRojas').
+    $http.get('http://alexrojas.cloudapp.net/web/api/bitacora/getActivities.php?user='+user2).
     success(function(data) {
       $scope.actividades = data;
     });

@@ -8,8 +8,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
-  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css" />
+  <!-- <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
+  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css" /> -->
   <script src="lib/onsen/js/angular/angular.js"></script>
   <script src="lib/onsen/js/onsenui.js"></script>
   <!--Import jQuery before materialize.js-->
@@ -29,11 +29,11 @@
     <ons-tab page="home-chats.html" class="lighten-2" label="Chat" icon="fa fa-comments"></ons-tab>
     <ons-tab page="notification.html" class="lighten-2" label="Notificaciones" icon="fa fa-bell-o"></ons-tab>
   </ons-tabbar>
+  <div class="contenedor">
 
-
-    <ons-template id="actividades.html">
-      <ons-navigator >
-        <ons-page ng-controller="ActividadesController">
+    <ons-template id="actividades.html" class="contenedor">
+      <ons-navigator class="contenedor">
+        <ons-page ng-controller="ActividadesController" class="contenedor">
           <ons-toolbar class="custom-nav">
             <div class="left">
               <a class="btn-floating waves-effect waves-light transparent custom-foat-left" ng-click="showSortMenu()" style="height: 30px; width: 30px"><i class="fa fa-sort"></i></a>
@@ -167,7 +167,7 @@
         </ons-page>
       </ons-navigator>
     </ons-template>
-
+  </div>
 
   <ons-template id="popover.html">
     <ons-popover direction="up down" cancelable>

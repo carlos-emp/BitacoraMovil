@@ -300,8 +300,9 @@ input[type=password] {
   bottom: 0;
 }
 
-#contenedor{
+.contenedor{
   height: 80%;
+  max-height: 80%;
   width: 100%;
   overflow: hidden;
   overflow-y: scroll;
